@@ -529,130 +529,6 @@ function generateCaptcha(check)
 }
 
 
-/*function password_msg()
-{
-	if(password == "")
-	{
-		document.getElementById("repassword_error_message").innerHTML = 'Please enter password first';
-	}
-}	
-*/
-
-
-
-
-/*function check_empty() //checking if fields are empty on submit
-{
-	if(error_fname==false)
-	{
-		document.getElementById("fname_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_lname==false)
-	{
-		document.getElementById("lname_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_dob==false)
-	{
-		document.getElementById("dob_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_email==false)
-	{
-		document.getElementById("email_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_password==false)
-	{
-		document.getElementById("password_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_repassword==false)
-	{
-		document.getElementById("repassword_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_gender==false)
-	{
-		document.getElementById("gender_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_phone1==false)
-	{
-		document.getElementById("phone1_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_address1==false)
-	{
-		document.getElementById("address1_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_city1==false)
-	{
-		document.getElementById("city1_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_state1==false)
-	{
-		document.getElementById("state1_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_country1==false)
-	{
-		document.getElementById("country1_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_pincode1==false)
-	{
-		document.getElementById("pincode1_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_address2==false)
-	{
-		document.getElementById("address2_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_city2==false)
-	{
-		document.getElementById("city2_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_state2==false)
-	{
-		document.getElementById("state2_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_country2==false)
-	{
-		document.getElementById("country2_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_pincode2==false)
-	{
-		document.getElementById("pincode2_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_interest==false)
-	{
-		document.getElementById("interests_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_captcha==false)
-	{
-		document.getElementById("captcha_error_message").innerHTML = 'This field cannot be empty';
-	}
-
-	if(error_fname == false || error_lname == false || error_dob == false || error_password == false ||
-		error_repassword == false || error_gender == false || error_phone1 == false || error_address1 == false ||
-		error_city1 == false || error_state1 == false || error_country1 == false || error_pincode1 == false ||
-		error_address2 == false || error_city2== false || error_state2 == false || error_country2 == false ||
-		error_pincode2 == false || error_interest == false || error_captcha == false)
-	{
-		return false;
-	}
-} */
-
 function fname_field() //disappear the error message
 {
 	var fname = document.forms["myForm"]["user_fname"].value;
@@ -800,7 +676,7 @@ function email_field() //disappear the error message
 function phone1_field() //disappear the error message
 {
 	var phone1 = document.forms["myForm"]["user_phone1"].value;
-	if(!( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(phone1))) // correct the format
+	if(!( /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/.test(phone1))) // correct the format
 	{
 		document.getElementById("phone1_error_message").innerHTML = 'Enter valid number';
 	}
@@ -813,7 +689,7 @@ function phone1_field() //disappear the error message
 function phone2_field() //disappear the error message
 {
 	var phone2 = document.forms["myForm"]["user_phone2"].value;
-	if(!( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(phone2))) // correct the format
+	if(!( /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/.test(phone2))) // correct the format
 	{
 		document.getElementById("phone2_error_message").innerHTML = 'Enter valid number';
 	}
