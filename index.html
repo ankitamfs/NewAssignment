@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
+  <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign Up Form</title>
@@ -9,14 +9,16 @@
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/formstyle.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
-	<body>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body>
 
       <img src="images/bnr.jpg" alt="Banner Image" id="bannerImg" />
 
       <div id="divOffer">
-  		<img src="images/offer.png" id="specialOffer"/>
-  	  </div>
+      <img src="images/offer.png" id="specialOffer"/>
+      </div>
 
       <form name="myForm" action="index.html" method="post" onsubmit ="return validate()">
       
@@ -26,15 +28,15 @@
           <legend><span class="number">1</span>Your basic info</legend>
 
           <label for="fname">First Name:<sup><span class="color">*</span></sup></label>
-          <input type="text" id="fname" name="user_fname" class="styleinputs" onchange="fname_field()">
+          <input type="text" id="fname" name="user_fname" class="styleinputs" maxlength="20" onchange="fname_field()">
           <p class="error_form" id="fname_error_message"></p>
 
           <label for="mname">Middle Name:</label>
-          <input type="text" id="mname" name="user_mname" class="styleinputs" onchange="mname_field()">
+          <input type="text" id="mname" name="user_mname" class="styleinputs" maxlength="20" onchange="mname_field()">
           <p class="error_form" id="mname_error_message"></p>
 
           <label for="lname">Last Name:<sup><span class="color">*</span></sup></label>
-          <input type="text" id="lname" name="user_lname" class="styleinputs" onchange="lname_field()">
+          <input type="text" id="lname" name="user_lname" class="styleinputs" maxlength="20" onchange="lname_field()">
           <p class="error_form" id="lname_error_message"></p>
           
           <label for="dob">Date of Birth:<sup><span class="color">*</span></sup></label>
@@ -46,12 +48,12 @@
           <p class="error_form" id="password_error_message"></p>
 
           <label for="repassword">Confirm Password:<sup><span class="color">*</span></sup></label>
-          <input type="password" id="repassword" name="user_repassword" class="styleinputs" disabled onchange="password_check()">
+          <input type="password" id="repassword" name="user_repassword" class="styleinputs" disabled onchange="repassword_field()">
           <p class="error_form" id="repassword_error_message"></p>
           
           <label>Gender:<sup><span class="color">*</span></sup></label>
-          <input type="radio" id="male" value="male" name="gender" class="option" onchange="gender_field()"><label for="male" class="light">Male</label><br>
-          <input type="radio" id="female" value="female" name="gender" class="option" onchange="gender_field()"><label for="female" class="light">Female</label>
+          <input type="radio" id="male" value="male" name="gender" class="option"><label for="male" class="light" onchange="gender_field()">Male</label><br>
+          <input type="radio" id="female" value="female" name="gender" class="option"><label for="female" class="light" onchange="gender_field()">Female</label>
           <br>
           <br>
           <p class="error_form" id="gender_error_message"></p>
@@ -60,71 +62,71 @@
         </fieldset>
 
         <fieldset>
-        	<legend><span class="number">2</span>Contact Details</legend>
+          <legend><span class="number">2</span>Contact Details</legend>
 
-        	<label for="mail">Email:<sup><span class="color">*</span></sup></label>
-          	<input type="email" id="mail" name="user_email" class="styleinputs" onchange="email_field()">
-          	<p class="error_form" id="email_error_message"></p>
+          <label for="mail">Email:<sup><span class="color">*</span></sup></label>
+            <input type="email" id="mail" name="user_email" class="styleinputs" onchange="email_field()">
+            <p class="error_form" id="email_error_message"></p>
 
-          	<label for="phone1">Phone No:<sup><span class="color">*</span></sup></label>
-          	<input type="tel" id="phone1" name="user_phone1" class="styleinputs" max="10" onchange="phone1_field()">
-          	<p class="error_form" id="phone1_error_message"></p>
+            <label for="phone1">Phone No:<sup><span class="color">*</span></sup></label>
+            <input type="tel" id="phone1" name="user_phone1" class="styleinputs" maxlength="10" onchange="phone1_field()">
+            <p class="error_form" id="phone1_error_message"></p>
 
-          	<label for="phone2">Alt Phone No:</label>
-          	<input type="tel" id="phone2" name="user_phone2" class="styleinputs" max="10" onchange="phone2_field()">
-          	<p class="error_form" id="phone2_error_message"></p>
+            <label for="phone2">Alt Phone No:</label>
+            <input type="tel" id="phone2" name="user_phone2" class="styleinputs" maxlength="10" onchange="phone2_field()">
+            <p class="error_form" id="phone2_error_message" ></p>
 
-          	<label for="Current Address"><b>Current Address:</b></label>
+            <label for="Current Address"><b>Current Address:</b></label>
 
-          	<br/>
+            <br/>
 
-          	<label for="address1">Address:<sup><span class="color">*</span></sup></label>
-          	<textarea id="address1" name="user_address1" class="styleinputs" onchange="address1_field()"></textarea>
-          	<p class="error_form" id="address1_error_message"></p>
+            <label for="address1">Address:<sup><span class="color">*</span></sup></label>
+            <textarea id="address1" name="user_address1" class="styleinputs" onchange="address1_field()"></textarea>
+            <p class="error_form" id="address1_error_message"></p>
 
-          	<label for="city1">City:<sup><span class="color">*</span></sup></label>
-          	<input type="text" id="city1" name="user_city1" class="styleinputs" onchange="city1_field()">
-          	<p class="error_form" id="city1_error_message"></p>
+            <label for="city1">City:<sup><span class="color">*</span></sup></label>
+            <input type="text" id="city1" name="user_city1" class="styleinputs" onchange="city1_field()">
+            <p class="error_form" id="city1_error_message"></p>
 
-          	<label for="state1">State:<sup><span class="color">*</span></sup></label>
-          	<input type="text" id="state1" name="user_state1" class="styleinputs" onchange="state1_field()">
-          	<p class="error_form" id="state1_error_message"></p>
+            <label for="state1">State:<sup><span class="color">*</span></sup></label>
+            <input type="text" id="state1" name="user_state1" class="styleinputs" onchange="state1_field()">
+            <p class="error_form" id="state1_error_message"></p>
 
-          	<label for="country1">Country:<sup><span class="color">*</span></sup></label>
-          	<input type="text" id="country1" name="user_country1" class="styleinputs" onchange="country1_field()">
-          	<p class="error_form" id="country1_error_message"></p>
+            <label for="country1">Country:<sup><span class="color">*</span></sup></label>
+            <input type="text" id="country1" name="user_country1" class="styleinputs" onchange="country1_field()">
+            <p class="error_form" id="country1_error_message"></p>
 
-          	<label for="pincode1">Pincode:<sup><span class="color">*</span></sup></label>
-          	<input type="text" id="pincode1" name="user_pincode1" class="styleinputs" maxlength="6" onchange="pincode1_field()">
-          	<p class="error_form" id="pincode1_error_message"></p>
+            <label for="pincode1">Pincode:<sup><span class="color">*</span></sup></label>
+            <input type="text" id="pincode1" name="user_pincode1" class="styleinputs" maxlength="6" onchange="pincode1_field()">
+            <p class="error_form" id="pincode1_error_message"></p>
 
-          	<label for="address">Is your Permanent Address same as Current Address?</label>
-            <input type="radio" id="yes" value="yes" name="addcheck" class="option" onchange="addcheck_field()"><label for="yes" class="light" checked>Yes</label><br>
-            <input type="radio" id="no" value="no" name="addcheck" class="option" onchange="addcheck_field()"><label for="no" class="light">No</label>
+            <label for="address">Is your Permanent Address same as Current Address?</label>
+            <input type="radio" id="yes" value="yes" name="addcheck" class="option"><label for="yes" class="light" checked>Yes</label><br>
+            <input type="radio" id="no" value="no" name="addcheck" class="option"><label for="no" class="light">No</label>
 
-          	<label for="Permanent Address"><b>Permanent Address:</b></label>
+            <label for="Permanent Address"><b>Permanent Address:</b></label>
 
-          	<br/>
+            <br/>
 
-          	<label for="address2">Address:<sup><span class="color">*</span></sup></label>
-          	<textarea id="address2" name="user_address2" class="styleinputs" onchange="address2_field()" disabled></textarea>
-          	<p class="error_form" id="address2_error_message"></p>
+            <label for="address2">Address:<sup><span class="color">*</span></sup></label>
+            <textarea id="address2" name="user_address2" class="styleinputs" disabled onchange="address2_field()"></textarea>
+            <p class="error_form" id="address2_error_message"></p>
 
-          	<label for="city2">City:<sup><span class="color">*</span></sup></label>
-          	<input type="text" id="city2" name="user_city2" class="styleinputs" onchange="city2_field()" disabled>
-          	<p class="error_form" id="city2_error_message"></p>
+            <label for="city2">City:<sup><span class="color">*</span></sup></label>
+            <input type="text" id="city2" name="user_city2" class="styleinputs" disabled onchange="city2_field()">
+            <p class="error_form" id="city2_error_message"></p>
 
-          	<label for="state2">State:<sup><span class="color">*</span></sup></label>
-          	<input type="text" id="state2" name="user_state2" class="styleinputs" onchange="state2_field()" disabled>
-          	<p class="error_form" id="state2_error_message"></p>
+            <label for="state2">State:<sup><span class="color">*</span></sup></label>
+            <input type="text" id="state2" name="user_state2" class="styleinputs" disabled onchange="state2_field()">
+            <p class="error_form" id="state2_error_message"></p>
 
-          	<label for="country2">Country:<sup><span class="color">*</span></sup></label>
-          	<input type="text" id="country2" name="user_country2" class="styleinputs" onchange="country2_field()" disabled>
-          	<p class="error_form" id="country2_error_message"></p>
+            <label for="country2">Country:<sup><span class="color">*</span></sup></label>
+            <input type="text" id="country2" name="user_country2" class="styleinputs" disabled onchange="country2_field()">
+            <p class="error_form" id="country2_error_message"></p>
 
-          	<label for="pincode2">Pincode:<sup><span class="color">*</span></sup></label>
-          	<input type="text" id="pincode2" name="user_pincode2" class="styleinputs" maxlength="6" onchange="pincode_field()" disabled>
-          	<p class="error_form" id="pincode2_error_message"></p>
+            <label for="pincode2">Pincode:<sup><span class="color">*</span></sup></label>
+            <input type="text" id="pincode2" name="user_pincode2" class="styleinputs" maxlength="6" disabled onchange="pincode2_field()">
+            <p class="error_form" id="pincode2_error_message"></p>
 
         </fieldset>
         
@@ -139,7 +141,7 @@
         
           <label>Interests:<sup><span class="color">*</span></sup></label>
           <input type="checkbox" id="sports" value="sports" name="user_interest" class="option" onclick="interests_field()"><label class="light" for="sports">Sports</label><br>
-          <input type="checkbox" id="books" value="books" name="user_interest" class="option" onclick="interests_field()"><label class="light" for="books">Books</label><br>
+          <input type="checkbox" id="books" value="books" name="user_interest" class="option"  onclick="interests_field()"><label class="light" for="books">Books</label><br>
           <input type="checkbox" id="photography" value="photography" name="user_interest" class="option" onclick="interests_field()"><label class="light" for="photography">Photography</label><br>
           <label class="light" for="others">Others</label><input type="text" id="others" name="user_interest1" onchange="interests_field()">
           <p class="error_form" id="interests_error_message"></p>
@@ -147,16 +149,16 @@
         </fieldset>
 
         <fieldset>
-        	<legend><span class="number">4</span>Captcha<sup><span class="color">*</span></sup></legend>
+          <legend><span class="number">4</span>Captcha<sup><span class="color">*</span></sup></legend>
 
-        	<label id="captchaq"></label>
-        	<input type="text" id="captcha" name="user_captcha" onchange="captcha_field()"> <button type="button" id="captcha_button" onclick="generateCaptcha(0)" title="Click to Refresh"><i class="fa fa-refresh"></i></button>
-        	<p class="error_form" id="captcha_error_message"></p>
-        </fieldset>
+          <label id="captchaq"></label>
+          <input type="text" id="captcha" name="user_captcha"> <button type="button" id="captcha_button" onclick="generateCaptcha(0)" title="Click to Refresh"><i class="fa fa-refresh"></i></button>
+          <p class="error_form" id="captcha_error_message"></p>
+        </fieldset> 
 
         <button type="submit" id="submit_button">Sign Up</button>
-
-      </form>
+        
+      </form> 
       
       <script src="js/checkform.js"></script>
 

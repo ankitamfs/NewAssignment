@@ -55,6 +55,7 @@ form {
   padding: 0px 20px;
   background: #f4f7f8;
   border-radius: 8px;
+  margin-top: -40px
 }
 
 h1 {
@@ -229,6 +230,16 @@ label.light {
     width: 100%;
   }
 
-  
+}
 
+@media screen and (max-width: 1200px)
+{
+  form{
+    margin-top: auto;
+    }
+
+    #headerImage{
+    max-height: 130px;
+    width: 100%;
+  }
 }
