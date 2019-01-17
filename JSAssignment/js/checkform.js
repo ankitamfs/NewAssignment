@@ -99,6 +99,10 @@ function check_mname(value,error_id)
 			document.getElementById(error_id).innerHTML = '';
 		}
 	}
+	if(value == "")
+	{
+		document.getElementById(error_id).innerHTML = '';
+	}
 }
 
 function check_dob(value,error_id)
@@ -242,6 +246,10 @@ function check_phone2(value,error_id)
 		{
 			document.getElementById(error_id).innerHTML = '';
 		}
+	}
+	if(value == "")
+	{
+		document.getElementById(error_id).innerHTML = '';
 	}
 }
 
@@ -402,6 +410,11 @@ function generateCaptcha(check)
    z = z + y.toString();
    ans = Math.floor(eval (z));
    document.getElementById('captchaq').innerText = z;
+   if(/^[0-9]+$/.test(ans.toString()) === false )
+	{
+		generateCaptcha(0);
+	}
+   
   }
   else
   {
